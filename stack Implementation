@@ -1,0 +1,39 @@
+STACK
+A stack is a simple data structure for storing data.
+A stack is a linear data structure that has the order of last in first out (LIFO).
+Real-life example:-  
+Pile of Plate
+
+We can visualize a stack like a pile of plates placed on top of each other. Each plate below the topmost plate cannot be directly accessed until the plates above are removed. plates can be added and removed from the top only. (LIFO)
+
+Operations in a stack:-
+Main operations:-
+push()-> add element into stack
+pop()-> removal of element from the top of the stack
+Auxiliary operations:-
+top()-> returns element on top of the stack
+size()->returns no. of elements stored in the stack
+isEmptyStack()-> indicates whether any element is stored in the stack or not
+isFullStack() -> indicates whether stack is full or not
+
+
+
+class stack:
+    def __init__(self):
+        self.con=[]
+
+    def push(self,value):
+        self.con.append(value)
+
+    def pop(self):
+        return self.con.pop()
+
+    def top(self):
+        print (self.con[-1])
+
+    def empty(self):
+        if (len(self.con)==0):
+            return True
+        else:
+            return False
+            
