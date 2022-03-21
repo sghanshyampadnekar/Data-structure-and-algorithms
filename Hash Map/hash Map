@@ -1,0 +1,46 @@
+HASH TABLES
+Hashing is a technique used for storing and retrieving information as quickly as possible. 
+
+
+Elements are stored as key/value pairs.
+
+KEYS  VALUES
+
+US -----> United State
+BR -------> Brazil
+
+
+Common Operations of Hash Table are:-
+-> Create HashTable: Creates a new Hash Table.
+-> Hash Search: Searches the key in HashTable.
+-> Hash Insert: Inserts new keys into HashTable.
+-> Hash Delete: Delete a key from HashTable.
+->Delete HashTable: Deletes the HashTable.
+
+Four Key Components of Hashing
+-> HashTable  
+		Hash Tables are key value pair.
+		Hash Tables is a generalization of arrays, with an array, we can store the elements whose key is k at a position k of an array.
+
+->Hash Function
+	The Hash Function takes a string of characters called keys and map it to a value of ceratin length called a hash value or hash
+
+-> Collision
+	A Hash function derives a small number from a big key, there is a chance that two keys would have the same value.
+
+Here there are 5  Keys and  4 strings, all 4 strings have the same key, therefore collision occurred
+A collision is when a key maps to an already occupied slot in the table.
+->Collision Reslution Technique
+
+(1) Chaining
+	make each cell of the table point to a linked list, ie we make the value part of the table a linked list.
+
+(2) Open Addressing
+In this method, values are stored in the hash table itself
+if the hash index of a key is available, insert it directly into the table
+if the hash index of the key is not an available problem until an available slot is found
+
+Best Case Time Complexity
+Insert - O(1)
+Search - O(1)
+Delete - O(1)
