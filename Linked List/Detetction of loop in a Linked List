@@ -1,0 +1,142 @@
+Detetction of loop in a Linked List
+
+
+There are 2 approaches:
+-> Floyd's Cyclic Finding Algorithms
+-> Hashing Approach
+
+
+
+-> Floyd's Cyclic Finding Algorithms
+	This is the fatest method. Traverse linked list using 2 pointers. 
+  Move one pointer by one and other pointer by two. If the two pointer meet at some node then there is a loop. 
+  if pointer don't meet then linked list doesn't have loop. 
+
+  Time complexity O(n)
+  
+  
+  
+  class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+
+    def description(self):
+        print(self.data)
+
+
+
+class LinkedList:
+    def __init__(self):
+        self.head=None
+
+    #function to insert a new node at the begining
+
+    def push(self,new_data):
+        new_node=Node(new_data)
+        new_node.next=self.head
+        self.head=new_node
+
+
+    def printList(self):
+        temp=self.head
+        while(temp):
+            print(temp.data)
+            temp=temp.next
+
+
+    
+    def detectLoop(self):
+        slow=self.head
+        fast=self.head
+        while(slow and fast and fast.next):
+            slow=slow.next
+            fast=fast.next.next
+            if(slow==fast):
+                print("loop found")
+        print("No loop")
+        
+        
+llist = LinkedList()
+llist.push(20)
+llist.push(4)
+llist.push(15)
+llist.push(10)
+llist.detectLoop()
+  
+
+
+
+-> Hashing Approach
+
+  Traverse the list one by one and keep putting the node addresses in a Hash Table. 
+  At any point, if NULL is reached then return false, and if the next of the current nodes points to any of the previously stored nodes in Hash then return true.
+  
+  Time complexity: O(n)
+  
+  
+  class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+
+    def description(self):
+        print(self.data)
+
+
+
+class LinkedList:
+    def __init__(self):
+        self.head=None
+
+    #function to insert a new node at the begining
+
+    def push(self,new_data):
+        new_node=Node(new_data)
+        new_node.next=self.head
+        self.head=new_node
+
+
+    def printList(self):
+        temp=self.head
+        while(temp):
+            print(temp.data)
+            temp=temp.next
+
+
+    
+    def detectLoop(self):
+        slow=self.head
+        fast=self.head
+        while(slow and fast and fast.next):
+            slow=slow.next
+            fast=fast.next.next
+            if(slow==fast):
+                print("loop found")
+        print("No loop")
+        
+        
+        
+    def detectLoop(self):
+        S=set()
+        temp=self.head
+        while(temp):
+            if(temp in S):
+                print("True")
+            S.add(temp)
+            temp=temp.next
+        print("False")
+
+
+llist = LinkedList()
+llist.push(20)
+llist.push(4)
+llist.push(15)
+llist.push(10)
+llist.detectLoop()
+  
+  
+
+
+
+
