@@ -41,13 +41,14 @@ class LinkedList:
         last.next=new_node
 
     def insertAfter(self, prev_node,new_data):
-        if(prev_node == None):
+        if(prev_node is  None):
             print("Not in Linked List")
             return
 
-        new_node= Node(new_data)
-        new_node.next=prev_node.next
-        prev_node = new_node
+        new_node = Node(new_data)
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+
 
 
     def printList(self):
@@ -68,7 +69,6 @@ llist.insertAfter(llist.head.next, 8)
 
 print('Created linked list is: ')
 llist.printList()
-
 
 
 
