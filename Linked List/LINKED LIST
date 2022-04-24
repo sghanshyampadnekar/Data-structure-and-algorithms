@@ -1,0 +1,31 @@
+LINKED LIST
+
+A linked list is a linear data structure in which the elements  are not stored in a contiguous memory loaction.
+
+The elements in a linked list are linked using pointers.
+
+
+
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+
+    def description(self):
+        print(self.data)
+
+
+class LinkedList:
+    def __init__(self):
+        self.head=None
+
+
+
+
+list=LinkedList()
+list.head=Node(1)
+list.head.description()
+list.head.next=Node(2)
+list.head.next.description()
+list.head.next.next=Node(3)
+list.head.next.next.description()
